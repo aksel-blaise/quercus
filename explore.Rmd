@@ -1,0 +1,123 @@
+---
+title: "A potential biological correlate of _design intent_ for Gary dart points from the Poverty Point World Heritage Site"
+author: "Robert Z. Selden, Jr."
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load packages + data
+
+```{r load.packages, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# install required analysis packages
+#devtools::install_github("r-lib/here")
+#devtools::install_github("karthik/wesanderson")
+#devtools::install_github("MomX/Momocs")
+
+# load packages
+library(here)
+library(wesanderson)
+library(Momocs)
+
+# read images
+jpg.list <- list.files(here("./jpeg"), 
+                       full.names = TRUE)
+
+# read attribute data
+att.data <- read.csv("att.data.csv", 
+                     header = TRUE, 
+                     as.is = TRUE)
+
+# attribute to factor
+att.data$type <- as.factor(att.data$type)
+```
+
+## Generate outlines
+
+```{r outlines + attributes, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# generate outlines
+outlines <- jpg.list %>%
+  import_jpg()
+
+# add attributes
+data.out <- Out(outlines,
+                fac = att.data)
+
+# scale, align, rotate, and center specimens
+norm.outlines <- data.out %>% 
+  coo_scale() %>%
+  coo_align() %>% 
+  coo_rotate() %>% 
+  coo_center()
+```
+
+## Calibrate harmonic + EFA
+
+```{r cal.harm, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# calibrate how many harmonics needed
+calibrate_harmonicpower_efourier(norm.outlines, 
+                                 nb.h = 30)
+
+# 11 harmonics needed to capture 99 percent of variation
+calibrate_reconstructions_efourier(norm.outlines, 
+                                   range = 1:11)
+
+# generate efa outlines with 11 harmonics
+efa.outlines <- efourier(norm.outlines, 
+                         nb.h = 11, 
+                         norm = TRUE)
+
+# use efa.outlines for pca
+pca.outlines <- PCA(efa.outlines)
+```
+
+## PCA
+
+```{r pca.plot, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# pca 
+scree_plot(pca.outlines)
+
+# plot pca by type
+plot_PCA(pca.outlines, 
+         morphospace_position = "range",
+         palette = pal_qual_solarized,
+         chullfilled = TRUE,
+         ~type,
+         axesnames = TRUE,
+         morphospace = TRUE,
+         eigen = TRUE,
+         center_origin = TRUE,
+         zoom = 1.25)
+
+# contribution of each pc
+boxplot(pca.outlines, 
+        ~type, 
+        nax = 1:5)
+
+# mean shape + 2sd for first five pcs
+PCcontrib(pca.outlines, 
+          nax = 1:5)
+```
+
+## MANOVA + MANOVA_PW
+
+```{r manova, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# shape differences between type?
+MANOVA(pca.outlines, 'type')
+
+# which differ?
+MANOVA_PW(pca.outlines, 'type')
+```
+
+## Mean shapes
+
+```{r ms1, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+# mean shapes
+ms <- MSHAPES(efa.outlines,
+                ~type)
+plot_MSHAPES(ms, 
+             size = 0.75)
+```
