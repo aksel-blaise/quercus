@@ -1,2 +1,2 @@
 # quercus
-Do water oak (Quercus nigra) leaves differ in shape from Gary dart points?
+Do water oak (_Quercus nigra_) leaves differ in shape from Gary dart points?
