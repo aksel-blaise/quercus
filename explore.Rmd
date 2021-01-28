@@ -1,5 +1,5 @@
 ---
-title: "A potential biological correlate of _design intent_ for Gary dart points from the Poverty Point World Heritage Site"
+title: "A potential biological correlate of _design intent_ for Gary dart points: A case study from the Poverty Point World Heritage Site"
 author: "Robert Z. Selden, Jr."
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: github_document

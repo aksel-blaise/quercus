@@ -1,5 +1,5 @@
-A potential biological correlate of *design intent* for Gary dart points
-from the Poverty Point World Heritage Site
+A potential biological correlate of *design intent* for Gary dart
+points: A case study from the Poverty Point World Heritage Site
 ================
 Robert Z. Selden, Jr.
 28 January, 2021
