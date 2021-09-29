@@ -1,5 +1,5 @@
 ---
-title: "A potential biological correlate of _design intent_ for Gary dart points: A case study from the Poverty Point World Heritage Site"
+title: "A potential biological correlate of _design intent_ for Gary dart points from the American Southeast: A case study from the Poverty Point World Heritage Site"
 author: "Robert Z. Selden, Jr."
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: github_document
@@ -37,7 +37,7 @@ att.data$type <- as.factor(att.data$type)
 
 ## Generate outlines
 
-```{r outlines + attributes, out.width = "100%", dpi = 300, echo=TRUE, warning=FALSE}
+```{r outlines + attributes, out.width = "100%", dpi = 300, echo=FALSE, warning=FALSE}
 # generate outlines
 outlines <- jpg.list %>%
   import_jpg()

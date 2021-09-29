@@ -1,8 +1,9 @@
-A potential biological correlate of *design intent* for Gary dart
-points: A case study from the Poverty Point World Heritage Site
+A potential biological correlate of *design intent* for Gary dart points
+from the American Southeast: A case study from the Poverty Point World
+Heritage Site
 ================
 Robert Z. Selden, Jr.
-28 January, 2021
+29 September, 2021
 
 ## Load packages + data
 
@@ -16,7 +17,7 @@ Robert Z. Selden, Jr.
 library(here)
 ```
 
-    ## here() starts at D:/github/quercus
+    ## here() starts at E:/github/quercus
 
 ``` r
 library(wesanderson)
@@ -45,12 +46,6 @@ att.data$type <- as.factor(att.data$type)
 ```
 
 ## Generate outlines
-
-``` r
-# generate outlines
-outlines <- jpg.list %>%
-  import_jpg()
-```
 
     ## Extracting 206.jpg outlines...
 
@@ -262,19 +257,6 @@ outlines <- jpg.list %>%
     ## [ 206 / 206 ]  sy43-6.jpg
 
     ## Done in 1.3 mins
-
-``` r
-# add attributes
-data.out <- Out(outlines,
-                fac = att.data)
-
-# scale, align, rotate, and center specimens
-norm.outlines <- data.out %>% 
-  coo_scale() %>%
-  coo_align() %>% 
-  coo_rotate() %>% 
-  coo_center()
-```
 
 ## Calibrate harmonic + EFA
 
