@@ -1,6 +1,5 @@
 A potential biological correlate of *design intent* for Gary dart points
-from the American Southeast: A case study from the Poverty Point World
-Heritage Site
+from the American Southeast?
 ================
 Robert Z. Selden, Jr.
 29 September, 2021
@@ -46,6 +45,12 @@ att.data$type <- as.factor(att.data$type)
 ```
 
 ## Generate outlines
+
+``` r
+# generate outlines
+outlines <- jpg.list %>%
+  import_jpg()
+```
 
     ## Extracting 206.jpg outlines...
 
@@ -256,7 +261,20 @@ att.data$type <- as.factor(att.data$type)
     ## [ 205 / 206 ]  sy43-5.jpg
     ## [ 206 / 206 ]  sy43-6.jpg
 
-    ## Done in 1.3 mins
+    ## Done in 1.2 mins
+
+``` r
+# add attributes
+data.out <- Out(outlines,
+                fac = att.data)
+
+# scale, align, rotate, and center specimens
+norm.outlines <- data.out %>% 
+  coo_scale() %>%
+  coo_align() %>% 
+  coo_rotate() %>% 
+  coo_center()
+```
 
 ## Calibrate harmonic + EFA
 
