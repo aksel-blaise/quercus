@@ -35,7 +35,7 @@ The great majority of dart point types recovered from archaeological sites in th
 
 # Acknowledgments {-}
 
-We extend our gratitude to the Poverty Point World Heritage Site, University of Arkansas Museum, and Texas Archeological Research Laboratory for the requisite permissions and access needed to generate 3D scans of the Gahagan bifaces. Thanks to ... for their comments on the analysis of Gary dart point shape.
+We extend our gratitude to the Poverty Point World Heritage Site, University of Arkansas Museum, and Texas Archeological Research Laboratory for the requisite permissions and access needed to generate scans of the Gary dart points. Thanks to ... for their comments on the analysis of Gary dart point shape.
 
 RZS extends his gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms of the landmarking protocol used in this study ([`LM3d1`](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)), as well as the landmarking protocol for Gahagan bifaces that will be used in the next iteration of these analytical efforts ([`LM3d2`](https://seldenlab.github.io/gahaganmorph.3/landmarking-protocol-3d2.html)); to Martin Hinz for fielding questions related to the `oxcAAR` package and Derek Hamilton for his guidance with the chronological models; and to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren Butaric, and Kersten Bergstrom for their constructive criticisms, general comments, and suggestions throughout the development of this research program.
 
