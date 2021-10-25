@@ -1,0 +1,50 @@
+---
+title: |
+  A potential biological correlate of _design intent_ for Gary dart points from the American Southeast?
+type: ORIGINAL RESEARCH ARTICLE
+author:
+  - name: Robert Z. Selden, Jr.
+    affil: a
+    email: zselden@sfasu.edu
+  - name: John E. Dockall
+    affil: b
+    email: johnd@coxmcclain.com
+affiliation:
+  - num: a
+    address: |
+      Heritage Research Center, Stephen F. Austin State University; Department of Biology, Stephen F. Austin State University; Cultural Heritage Department, Jean Monnet University
+  - num: b
+    address: |
+      Cox|McClain Environmental Consultants, Inc.
+bibliography: interactcadsample.bib
+appendix: appendix.tex
+abstract: |
+  Abstract here.
+keywords: |
+  archaeoinformatics; geometric morphometrics; museum studies; digital humanities; mental model
+header-includes: |
+  \usepackage{hyperref}
+  \usepackage[utf8]{inputenc}
+  \def\tightlist{}
+output: rticles::tf_article
+---
+
+# Introduction
+
+The great majority of dart point types recovered from archaeological sites in the American Southeast are defined on the basis of shape, which is the defining characteristic of a morphological type \citep{RN8233}. 
+
+# Acknowledgments {-}
+
+We extend our gratitude to the Poverty Point World Heritage Site, University of Arkansas Museum, and Texas Archeological Research Laboratory for the requisite permissions and access needed to generate 3D scans of the Gahagan bifaces. Thanks to ... for their comments on the analysis of Gary dart point shape.
+
+RZS extends his gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms of the landmarking protocol used in this study ([`LM3d1`](https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md)), as well as the landmarking protocol for Gahagan bifaces that will be used in the next iteration of these analytical efforts ([`LM3d2`](https://seldenlab.github.io/gahaganmorph.3/landmarking-protocol-3d2.html)); to Martin Hinz for fielding questions related to the `oxcAAR` package and Derek Hamilton for his guidance with the chronological models; and to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren Butaric, and Kersten Bergstrom for their constructive criticisms, general comments, and suggestions throughout the development of this research program.
+
+# Funding {-}
+
+Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training (NCPTT), and additional grants to RZS from the Caddo Tribe of Oklahoma, National Forests and Grasslands in Texas (15-PA-11081300-033) and the United States Forest Service (20-PA-11081300-074). Funding to scan the Gary dart points from the Poverty Point World Heritage Site, University of Arkansas Museum, and Texas Archeological Research Laboratory was provided to RZS by the National Forests ad Grasslands in Texas (15-PA-11081300-033).
+
+# Data management {-}
+
+The analysis code associated with this project can be accessed through this document or the [GitHub](https://github.com/seldenlab/gahaganmorph.3) repository, which is digitally curated on the Open Science Framework [DOI: 10.17605/OSF.IO/Y7B39](https://osf.io/y7b39/). The reproducible nature of this undertaking provides a means for others to critically assess and evaluate the various analytical components \citep{RN8312,RN8313,RN8299}, which is a necessary requirement for the production of reliable knowledge.
+
+Reproducibility projects in [psychology](https://osf.io/ezcuj/) and [cancer biology](https://www.cos.io/rpcb) are impacting current research practices across all domains. Examples of reproducible research are becoming more abundant in archaeology \citep{RN8207,RN8965,RN8154,RN8318,RN9364}, and the next generation of archaeologists are learning those tools and methods needed to reproduce and/or replicate research results \citep{RN10760}. Reproducible and replicable research work flows are often employed at the highest levels of humanities-based inquiries to mitigate concern or doubt regarding proper execution, and is of particular import should the results have---explicitly or implicitly---a major impact on scientific progress \citep{RN10761}.

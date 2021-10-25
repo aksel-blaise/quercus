@@ -1,0 +1,151 @@
+% interactcadsample.tex
+% v1.03 - April 2017
+
+\documentclass[]{interact}
+
+\usepackage{epstopdf}% To incorporate .eps illustrations using PDFLaTeX, etc.
+\usepackage{subfigure}% Support for small, `sub' figures and tables
+%\usepackage[nolists,tablesfirst]{endfloat}% To `separate' figures and tables from text if required
+
+\usepackage{natbib}% Citation support using natbib.sty
+\bibpunct[, ]{(}{)}{;}{a}{}{,}% Citation support using natbib.sty
+\renewcommand\bibfont{\fontsize{10}{12}\selectfont}% Bibliography support using natbib.sty
+
+\theoremstyle{plain}% Theorem-like structures provided by amsthm.sty
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{notation}{Notation}
+
+% see https://stackoverflow.com/a/47122900
+
+% Pandoc citation processing
+
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\def\tightlist{}
+
+
+\begin{document}
+
+\articletype{ORIGINAL RESEARCH ARTICLE}
+
+\title{A potential biological correlate of \emph{design intent} for Gary
+dart points from the American Southeast?}
+
+
+\author{\name{Robert Z. Selden, Jr.$^{a}$, John E. Dockall$^{b}$}
+\affil{$^{a}$Heritage Research Center, Stephen F. Austin State
+University; Department of Biology, Stephen F. Austin State University;
+Cultural Heritage Department, Jean Monnet
+University; $^{b}$Cox\textbar McClain Environmental Consultants, Inc.}
+}
+
+\thanks{CONTACT Robert Z. Selden,
+Jr.. Email: \href{mailto:zselden@sfasu.edu}{\nolinkurl{zselden@sfasu.edu}}, John
+E.
+Dockall. Email: \href{mailto:johnd@coxmcclain.com}{\nolinkurl{johnd@coxmcclain.com}}}
+
+\maketitle
+
+\begin{abstract}
+Abstract here.
+\end{abstract}
+
+\begin{keywords}
+archaeoinformatics; geometric morphometrics; museum studies; digital
+humanities; mental model
+\end{keywords}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Introduction here.
+
+\hypertarget{acknowledgments}{%
+\section*{Acknowledgments}\label{acknowledgments}}
+\addcontentsline{toc}{section}{Acknowledgments}
+
+We extend our gratitude to the Caddo Nation of Oklahoma, the Williamson
+Museum at Northwestern State University, the Louisiana State Exhibit
+Museum, the Texas Archeological Research Laboratory at The University of
+Texas at Austin, the Brazos Valley Museum of Natural History, the Texas
+Parks and Wildlife Department, and the Sam Noble Oklahoma Museum of
+Natural Science for the requisite permissions and access needed to
+generate 3D scans of the Gahagan bifaces. Thanks to Harry J. Shafer,
+Hiram F. (Pete) Gregory, Christian S. Hoggard, and David K. Thulman for
+their comments on the analyses of Gahagan biface shape.
+
+RZS extends his gratitude to Christian S. Hoggard and David K. Thulman
+for their thoughtful comments and constructive criticisms of the
+landmarking protocol used in this study
+(\href{https://github.com/aksel-blaise/gahaganmorph2/blob/master/analysis/landmarking-protocol.md}{\texttt{LM3d1}}),
+as well as the landmarking protocol for Gahagan bifaces that will be
+used in the next iteration of these analytical efforts
+(\href{https://seldenlab.github.io/gahaganmorph.3/landmarking-protocol-3d2.html}{\texttt{LM3d2}});
+to Martin Hinz for fielding questions related to the \texttt{oxcAAR}
+package and Derek Hamilton for his guidance with the chronological
+models; and to Dean C. Adams, Michael L. Collyer, Emma Sherratt, Lauren
+Butaric, and Kersten Bergstrom for their constructive criticisms,
+general comments, and suggestions throughout the development of this
+research program.
+
+\hypertarget{funding}{%
+\section*{Funding}\label{funding}}
+\addcontentsline{toc}{section}{Funding}
+
+Components of this analytical work flow were developed and funded by a
+Preservation Technology and Training grant (P14AP00138) to RZS from the
+National Center for Preservation Technology and Training (NCPTT), and
+additional grants to RZS from the Caddo Tribe of Oklahoma, National
+Forests and Grasslands in Texas (15-PA-11081300-033) and the United
+States Forest Service (20-PA-11081300-074). Funding to scan the Gahagan
+bifaces at the Williamson Museum at Northwestern State University,
+Louisiana State Exhibit Museum, Texas Archeological Research Laboratory
+at The University of Texas at Austin, and Sam Noble Oklahoma Museum of
+Natural Science was provided to the RZS by the Heritage Research Center
+at Stephen F. Austin State University.
+
+\hypertarget{data-management}{%
+\section*{Data management}\label{data-management}}
+\addcontentsline{toc}{section}{Data management}
+
+The analysis code associated with this project can be accessed through
+this document or the
+\href{https://github.com/seldenlab/gahaganmorph.3}{GitHub} repository,
+which is digitally curated on the Open Science Framework
+\href{https://osf.io/y7b39/}{DOI: 10.17605/OSF.IO/Y7B39}. The
+reproducible nature of this undertaking provides a means for others to
+critically assess and evaluate the various analytical components
+\citep{RN8312,RN8313,RN8299}, which is a necessary requirement for the
+production of reliable knowledge.
+
+Reproducibility projects in \href{https://osf.io/ezcuj/}{psychology} and
+\href{https://www.cos.io/rpcb}{cancer biology} are impacting current
+research practices across all domains. Examples of reproducible research
+are becoming more abundant in archaeology
+\citep{RN8207,RN8965,RN8154,RN8318,RN9364}, and the next generation of
+archaeologists are learning those tools and methods needed to reproduce
+and/or replicate research results \citep{RN10760}. Reproducible and
+replicable research work flows are often employed at the highest levels
+of humanities-based inquiries to mitigate concern or doubt regarding
+proper execution, and is of particular import should the results
+have---explicitly or implicitly---a major impact on scientific progress
+\citep{RN10761}.
+
+\bibliographystyle{tfcad}
+\bibliography{interactcadsample.bib}
+
+
+\input{"appendix.tex"}
+
+
+\end{document}
